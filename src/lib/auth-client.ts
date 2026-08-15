@@ -10,6 +10,7 @@ export const authClient = createAuthClient({
   baseURL: process.env.NEXT_PUBLIC_BACKEND_URL,
 
   fetchOptions: {
+    credentials: "include",
     headers: {
       "ngrok-skip-browser-warning": "true",
     },
@@ -18,7 +19,6 @@ export const authClient = createAuthClient({
 
 export const signOut = async () => {
   const { data: response, error } = await authClient.signOut();
-
   return { response, error };
 };
 
@@ -44,8 +44,8 @@ export const emailSignIn = async (data: AuthValue) => {
 export const googleLogin = async () => {
   const { data: response, error } = await authClient.signIn.social({
     provider: "google",
-    callbackURL: `${window.location.origin}`,
-    errorCallbackURL: `${window.location.origin}/sign-in`,
+    callbackURL: `${process.env.NEXT_PUBLIC_FRONTEND_URL}`,
+    errorCallbackURL: `${process.env.NEXT_PUBLIC_FRONTEND_URL}/sign-in`,
   });
 
   return { response, error };

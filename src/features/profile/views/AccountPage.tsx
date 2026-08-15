@@ -1,6 +1,5 @@
-import { authClient } from "~/lib/auth-client";
-import TopNavbar from "~/components/navbar/TopNavbar";
-import Link from "next/link";
+"use client";
+
 import {
   ChevronRightIcon,
   FileTextIcon,
@@ -8,24 +7,31 @@ import {
   LockKeyholeIcon,
   SettingsIcon,
 } from "lucide-react";
+import Link from "next/link";
+import Loading from "~/components/LoadingComponent";
+import { authClient } from "~/lib/auth-client";
 import NotLoginSection from "~/features/profile/components/NotLoginSection";
 import LoginSection from "~/features/profile/components/LoginSection";
+import TopNavbar from "~/components/navbar/TopNavbar";
 
-const AccountPage = async () => {
-  const { data: session } = await authClient.getSession();
+const AccountPage = () => {
+  const { data, isPending } = authClient.useSession();
+
+  if (isPending) {
+    return <Loading />;
+  }
 
   return (
-    <div>
+    <div className="min-h-screen">
       <TopNavbar header="Akun" />
-
-      <main className="mx-4 pb-20">
-        {!session ? (
+      <div className={"px-4"}>
+        {!data ? (
           <NotLoginSection />
         ) : (
           <LoginSection
-            name={session.user.name}
-            email={session.user.email}
-            image={session.user.image ?? undefined}
+            name={data.user.name}
+            email={data.user.email}
+            image={data.user.image ?? undefined}
           />
         )}
 
@@ -64,10 +70,10 @@ const AccountPage = async () => {
           </ul>
         </section>
 
-        <p className="text-muted-foreground mt-auto pt-6 text-center text-xs">
+        <p className="text-muted-foreground mt-auto pt-8 text-center text-xs">
           v1.0.0
         </p>
-      </main>
+      </div>
     </div>
   );
 };
