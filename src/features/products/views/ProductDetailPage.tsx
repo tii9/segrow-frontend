@@ -197,7 +197,7 @@ const ProductDetailPage = ({ slug }: { slug: string }) => {
         )}
       </section>
 
-      <div className="bg-background/95 border-border fixed inset-x-0 bottom-0 left-1/2 z-20 flex max-w-md -translate-x-1/2 justify-between gap-4 border-t p-4 backdrop-blur">
+      <div className="bg-background/95 border-border fixed inset-x-0 bottom-0 left-1/2 z-20 flex w-full max-w-md -translate-x-1/2 justify-between gap-4 border-t p-4 backdrop-blur">
         {product?.stock === 0 ? (
           <Button disabled className="flex-1 p-4">
             Tidak Tersedia
