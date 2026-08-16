@@ -40,7 +40,7 @@ const TopNavbar = ({
 
   return (
     <div
-      className={`sticky top-0 z-999 container bg-white/99 p-4 shadow ${className}`}
+      className={`sticky top-0 z-99 container bg-white/99 p-4 shadow ${className}`}
     >
       <div className="flex items-center justify-start gap-4">
         <button onClick={handleBack} className="cursor-pointer">

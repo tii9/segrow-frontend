@@ -24,20 +24,6 @@ const nextConfig: NextConfig = {
     ],
   },
 
-  async headers() {
-    return [
-      {
-        source: "/api/:path*",
-        headers: [
-          {
-            key: "x-forwarded-proto",
-            value: "https",
-          },
-        ],
-      },
-    ];
-  },
-
   async rewrites() {
     return [
       {

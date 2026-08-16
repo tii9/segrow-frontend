@@ -8,11 +8,11 @@ import {
   SettingsIcon,
 } from "lucide-react";
 import Link from "next/link";
-import Loading from "~/components/LoadingComponent";
 import { authClient } from "~/lib/auth-client";
+import Loading from "~/components/LoadingComponent";
+import TopNavbar from "~/components/navbar/TopNavbar";
 import NotLoginSection from "~/features/profile/components/NotLoginSection";
 import LoginSection from "~/features/profile/components/LoginSection";
-import TopNavbar from "~/components/navbar/TopNavbar";
 
 const AccountPage = () => {
   const { data, isPending } = authClient.useSession();
@@ -22,7 +22,7 @@ const AccountPage = () => {
   }
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen pb-20">
       <TopNavbar header="Akun" />
       <div className={"px-4"}>
         {!data ? (

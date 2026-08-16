@@ -17,7 +17,7 @@ const SettingsPage = async () => {
   console.log(user);
 
   return (
-    <div className="-mb-24 min-h-dvh">
+    <div className="min-h-screen pb-20">
       <TopNavbar header="Pengaturan Akun" />
       <div className="overflow-y-hidden px-4">
         <AccountSettings />
