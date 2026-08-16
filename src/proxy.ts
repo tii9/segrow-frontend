@@ -1,4 +1,3 @@
-import { getSessionCookie } from "better-auth/cookies";
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
@@ -20,13 +19,7 @@ const isRouteMatch = (pathname: string, route: string) => {
 export async function proxy(req: NextRequest) {
   const { pathname } = req.nextUrl;
 
-  const token =
-    req.cookies.get("__Secure-better-auth.session_token")?.value ||
-    req.cookies.get("better-auth.session_token")?.value;
-
-  console.log(token);
-
-  const session = getSessionCookie(req);
+  const session = req.cookies.get("__Secure-better-auth.session_token")?.value;
 
   const isAuthRoute = authRoutes.some((route) => isRouteMatch(pathname, route));
 

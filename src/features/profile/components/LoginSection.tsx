@@ -23,6 +23,7 @@ const LoginSection = (user: User) => {
             height={50}
             alt={user.name}
             className="bg-primary-foreground/15 ring-primary-foreground/30 flex size-16 items-center justify-center rounded-full text-xl font-semibold ring-2 backdrop-blur"
+            loading="eager"
           />
 
           <div className="min-w-0">

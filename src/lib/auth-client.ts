@@ -7,7 +7,7 @@ export type AuthValue = {
 };
 
 export const authClient = createAuthClient({
-  baseURL: process.env.NEXT_PUBLIC_BACKEND_URL,
+  baseURL: process.env.NEXT_PUBLIC_FRONTEND_URL,
 
   fetchOptions: {
     credentials: "include",
@@ -42,10 +42,12 @@ export const emailSignIn = async (data: AuthValue) => {
 };
 
 export const googleLogin = async () => {
+  const frontendUrl = process.env.NEXT_PUBLIC_FRONTEND_URL!;
+
   const { data: response, error } = await authClient.signIn.social({
     provider: "google",
-    callbackURL: `${process.env.NEXT_PUBLIC_FRONTEND_URL}`,
-    errorCallbackURL: `${process.env.NEXT_PUBLIC_FRONTEND_URL}/sign-in`,
+    callbackURL: frontendUrl,
+    errorCallbackURL: `${frontendUrl}/sign-in`,
   });
 
   return { response, error };
