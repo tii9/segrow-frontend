@@ -168,9 +168,7 @@ const CheckoutSection = () => {
             Total
             <span className="font-semibold">
               {idrFormat(
-                (cartItems?.totalPrice ?? 0) +
-                  (deliveryFee?.price ?? 0) +
-                  (userSelectedPaymentMethod.id === "QRIS" ? 2000 : 0),
+                (cartItems?.totalPrice ?? 0) + (deliveryFee?.price ?? 0),
               )}
             </span>
           </p>
@@ -186,9 +184,7 @@ const CheckoutSection = () => {
             Total belanja
             <span className="text-base font-semibold">
               {idrFormat(
-                (cartItems?.totalPrice ?? 0) +
-                  (deliveryFee?.price ?? 0) +
-                  (userSelectedPaymentMethod.id === "QRIS" ? 2000 : 0),
+                (cartItems?.totalPrice ?? 0) + (deliveryFee?.price ?? 0),
               )}
             </span>
           </p>

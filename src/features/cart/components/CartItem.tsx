@@ -76,6 +76,8 @@ const CartItem = ({ item }: CartItemProps) => {
           src={item.product.imageUrl || ""}
           alt={item.product.name}
           fill
+          sizes="100%"
+          loading="eager"
           className="object-cover"
         />
       </div>

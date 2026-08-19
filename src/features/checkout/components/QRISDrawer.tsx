@@ -126,7 +126,7 @@ const QRISDrawer = ({ isOpen = false, setIsOpen, data }: QRISDrawerProps) => {
           </div>
 
           {order?.status !== "PENDING_PAYMENT" && (
-            <Button className="mt-4 flex py-2">
+            <Button className="mt-4 flex py-2 w-full">
               <Link href={"/"}>Kembali ke beranda</Link>
             </Button>
           )}

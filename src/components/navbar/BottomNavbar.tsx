@@ -1,9 +1,9 @@
 "use client";
 
 import {
-  HeartIcon,
   HomeIcon,
   LucideProps,
+  PaperBag,
   ShoppingCartIcon,
   UserIcon,
 } from "lucide-react";
@@ -27,14 +27,14 @@ const navItems: NavItem[] = [
     icon: HomeIcon,
   },
   {
+    name: "Produk",
+    href: "/products",
+    icon: PaperBag,
+  },
+  {
     name: "Keranjang",
     href: "/cart",
     icon: ShoppingCartIcon,
-  },
-  {
-    name: "Favorit",
-    href: "/favorite",
-    icon: HeartIcon,
   },
   {
     name: "Akun",

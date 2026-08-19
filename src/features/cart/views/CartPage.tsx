@@ -66,9 +66,11 @@ const CartPage = () => {
           </p>
         </div>
 
-        <Button className="mt-6 flex w-full px-4 py-5">
-          <Link href={"/cart/checkout"}>Lanjutkan Pembayaran</Link>
-        </Button>
+        <Link href={"/cart/checkout"}>
+          <Button className="mt-6 flex w-full px-4 py-5">
+            Lanjutkan Pembayaran
+          </Button>
+        </Link>
       </div>
     </div>
   );
