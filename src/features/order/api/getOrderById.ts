@@ -3,7 +3,7 @@ import { queryOptions, useQuery } from "@tanstack/react-query";
 import { axiosInstance } from "~/lib/axios";
 import { QueryConfig } from "~/lib/react-query";
 
-import { OrdersResponse } from "~/features/checkout/api/getOrdersByUser";
+import { OrdersResponse } from "~/features/order/api/getOrdersByUser";
 
 type OrderByIdResponse = {
   data: OrdersResponse["orders"][0] & {

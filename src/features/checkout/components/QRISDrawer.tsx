@@ -18,7 +18,7 @@ import {
 } from "~/components/ui/drawer";
 
 import { CreateOrderResponse } from "~/features/checkout/api/createOrder";
-import { useGetOrderById } from "~/features/checkout/api/getOrderById";
+import { useGetOrderById } from "~/features/order/api/getOrderById";
 import QRISExpiryCountdown from "~/features/checkout/components/QRISExpiryCountdown";
 
 type QRISDrawerProps = {
